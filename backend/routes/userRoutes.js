@@ -1,10 +1,16 @@
-// routes for user Apis
 import express from 'express';
-import { createUser, getUsers } from '../controllers/userController.js';
+import {
+  createUser,
+  getUsers,
+  updateUser,
+  deleteUser
+} from '../controllers/userController.js';
 
 const router = express.Router();
 
-router.get('/', getUsers);
-router.post('/', createUser);
+router.post('/', createUser);        // Create
+router.get('/', getUsers);           // Read
+router.put('/:id', updateUser);      // Update
+router.delete('/:id', deleteUser);   // Delete
 
 export default router;
